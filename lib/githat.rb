@@ -20,5 +20,9 @@ class Diff
   def files_names
     `git diff --name-only`.split /\n/
   end
+
+  def parse_diff(file_info)
+    extension = file[:name].gsub /(.*\.)/, ''
+  end
 end
 
