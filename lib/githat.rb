@@ -2,12 +2,12 @@ require File.dirname(__FILE__) + '/parser'
 
 class Diff
   def initialize
-    @files = files_info
+    @files = files_infos
   end
 
-  def files_info
+  def files_infos
     files = []
-    files_name.map do |name|
+    files_names.map do |name|
       files << { name: name, diff: file_diff(name) }
     end
     files
@@ -17,7 +17,7 @@ class Diff
     `git diff #{file}`
   end
 
-  def files_name
+  def files_names
     `git diff --name-only`.split /\n/
   end
 end
