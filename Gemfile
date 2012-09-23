@@ -4,4 +4,6 @@ group :development do
   gem "bundler"
   gem "git"
   gem "jeweler", "~> 1.8.3"
+  gem "fakefs"
+  gem "pygmentize"
 end
