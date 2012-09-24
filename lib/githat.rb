@@ -3,6 +3,11 @@ require File.dirname(__FILE__) + '/parser'
 class Diff
   class << self
     def main
+      output = ''
+      files_infos.each do |file|
+        output << parse_diff(file)
+      end
+      output
     end
 
     def files_infos
@@ -14,7 +19,18 @@ class Diff
     end
 
     def parse_diff(file_info)
-      extension = file[:name].gsub /(.*\.)/, ''
+      extension = file_info[:name].gsub /(.*\.)/, ''
+      splited = split_diff(file_info[:diff])
+      parsed_head = parse_with_diff(splited[:head])
+      parsed_code = parse_with_lang(splited[:code], extension)
+      parsed_code = parse_with_diff(parsed_code)
+      parsed_head + parsed_code
+    end
+
+    def split_diff(diff)
+      head = diff.scan(/diff(?:.*\n){4}@@.*@@/).first
+      code = diff.gsub(/diff(?:.*\n){5}/, '').strip
+      { head: head, code: code }
     end
 
     def file_diff(file)
