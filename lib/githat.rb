@@ -19,7 +19,6 @@ class Diff
     end
 
     def parse_diff(file_info)
-      # TODO: issue #1
       extension = file_info[:name].gsub /(.*\.)/, ''
       splited = split_diff(file_info[:diff])
       heads, codes = splited[:heads], splited[:codes]
@@ -67,6 +66,16 @@ class Diff
 
     def parse_with_diff(code)
       process(code, :diff)
+    end
+
+    def files_with_no_extension
+      {
+        '.gitignore' => :diff,
+        'Gemfile' => :rb,
+        'Gemfile.lock' => :rb,
+        'Rakefile' => :rb,
+        'rake' => :rb
+      }
     end
 
     def process(code, lexer)
