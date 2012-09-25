@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "githat"
   gem.homepage = "http://github.com/bernardofire/githat"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{highlight at git}
   gem.email = "bernardo.fire@gmail.com"
   gem.authors = ["Bernardo B. Marques"]
+  gem.executables = ["git-hat"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
