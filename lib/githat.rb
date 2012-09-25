@@ -35,7 +35,12 @@ class Diff
     end
 
     def file_extension(file_name)
-      file_name.gsub /(.*\.)/, ''
+      extension = file_name.gsub /(.+\.)/, ''
+      if extension.empty? || file_name == extension
+        extension = files_with_no_extension[file_name]
+        extension ||= 'text'
+      end
+      extension
     end
 
     def split_diff(diff)
