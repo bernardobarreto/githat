@@ -3,8 +3,7 @@ require 'pygmentize'
 class Pygmentize
   def self.process(source, lexer)
     args = ['-l', lexer.to_s,
-      '-f', 'terminal',
-      "-O", "encoding=#{source.encoding}"
+      '-f', 'terminal'
     ]
 
     IO.popen("#{bin} #{Shellwords.shelljoin args}", "r+") do |io|

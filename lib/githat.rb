@@ -40,15 +40,13 @@ class Diff
     end
 
     def split_codes(diff)
-      codes = []
-      codes << diff.split(/^@@ .* @@/)
-      codes.shift
+      codes = diff.split(/^@@ .* @@/)
+      codes[1..codes.size]
     end
 
     def split_heads(diff)
-      heads = []
-      heads << diff.scan(/(?:.*\n){4}@@ .* @@/).first
-      heads << diff.scan(/^@@ .* @@/).shift
+      heads = diff.scan(/(?:.*\n){4}@@ .* @@/)
+      heads << diff.scan(/^@@ .* @@/)[1..heads.size]
       heads.flatten
     end
 
