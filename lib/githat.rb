@@ -19,7 +19,7 @@ class Diff
     end
 
     def parse_diff(file_info)
-      extension = file_info[:name].gsub /(.*\.)/, ''
+      extension = file_extension(file_info[:name])
       splited = split_diff(file_info[:diff])
       heads, codes = splited[:heads], splited[:codes]
       complete_file_diff = ''
@@ -32,6 +32,10 @@ class Diff
       end
 
       complete_file_diff
+    end
+
+    def file_extension(file_name)
+      file_name.gsub /(.*\.)/, ''
     end
 
     def split_diff(diff)
@@ -55,7 +59,7 @@ class Diff
     end
 
     def files_names
-      `git diff --name-only`.split /\n/
+      `git diff --name-only`.split(/\n/)
     end
 
     def parse_with_lang(code, lang)
