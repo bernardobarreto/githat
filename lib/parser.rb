@@ -1,9 +1,10 @@
 require 'pygmentize'
 
 class Pygmentize
-  def self.process(source, lexer)
-    args = ['-l', lexer.to_s,
-      '-f', 'terminal'
+  def self.process(source, lexer=nil)
+    lex = lexer || 'text'
+    args = ['-l', lex.to_s,
+      '-f', 'terminal',
     ]
 
     IO.popen("#{bin} #{Shellwords.shelljoin args}", "r+") do |io|
