@@ -46,7 +46,7 @@ class Diff
 
     def split_heads(diff)
       heads = diff.scan(/(?:.*\n){4}@@ .* @@/)
-      heads << diff.scan(/^@@ .* @@/)[1..heads.size]
+      heads << diff.scan(/^@@ .* @@/)[1..heads.size] #TODO: this should not work (heads size==1?)
       heads.flatten
     end
 
@@ -68,7 +68,6 @@ class Diff
 
     def files_with_no_extension
       {
-        '.gitignore' => :diff,
         'Gemfile' => :rb,
         'Gemfile.lock' => :rb,
         'Rakefile' => :rb,
