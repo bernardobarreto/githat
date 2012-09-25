@@ -80,8 +80,9 @@ class Diff
         'Gemfile' => :rb,
         'Gemfile.lock' => :rb,
         'Rakefile' => :rb,
-        'rake' => :rb
+        'Makefile' => :makefile
       }
+      # TODO: support it: .*rake == rb
     end
 
     def process(code, lexer)
