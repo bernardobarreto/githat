@@ -39,7 +39,7 @@ module Diff
       extension = files_with_no_extension[file_name]
       extension ||= 'text'
     end
-    extension
+    extension.to_sym
   end
 
   def split_diff(diff)
@@ -76,10 +76,10 @@ module Diff
 
   def files_with_no_extension
     {
-      'Gemfile' => 'rb',
-      'Gemfile.lock' => 'rb',
-      'Rakefile' => 'rb',
-      'Makefile' => 'makefile'
+      'Gemfile' => :rb,
+      'Gemfile.lock' => :rb,
+      'Rakefile' => :rb,
+      'Makefile' => :makefile
     }
     # TODO: support it: .*rake == rb
   end

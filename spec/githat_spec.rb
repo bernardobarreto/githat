@@ -11,11 +11,11 @@ describe "Githat" do
 
   describe Diff do
     it "file_extension" do
-      file_extension('Makefile').should == 'makefile'
-      file_extension('.gitignore').should == 'text'
-      file_extension('foo.rb').should == 'rb'
-      file_extension('bar.js').should == 'js'
-      file_extension('foobar').should == 'text'
+      file_extension('Makefile').should == :makefile
+      file_extension('.gitignore').should == :text
+      file_extension('foo.rb').should == :rb
+      file_extension('bar.js').should == :js
+      file_extension('foobar').should == :text
     end
 
     it "files_names" do
