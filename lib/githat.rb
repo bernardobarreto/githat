@@ -54,7 +54,7 @@ module Diff
 
   def split_heads(diff)
     heads = diff.scan(/diff(?:.*\n){4}@@ .* @@/)
-    heads << diff.scan(/^@@ .* @@/)[1..heads.size] #TODO: this should not work (heads size==1?)
+    heads << diff.scan(/^@@ .* @@/).tap(&:shift)
     heads.flatten
   end
 
