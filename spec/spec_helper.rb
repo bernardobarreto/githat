@@ -11,6 +11,10 @@ module Diff
   def files_names
     ['githat_spec.rb']
   end
+
+  def file_diff(name)
+    _1_file_2_heads
+  end
 end
 
 def _2_heads_file
