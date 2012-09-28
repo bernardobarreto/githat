@@ -6,4 +6,5 @@ doc
 .bundle
 pkg
 *.swp
+*.swo
 .rvmrc
