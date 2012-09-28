@@ -35,7 +35,6 @@ module Diff
 
   def prepare_head_for_output(head)
     head.insert 0, "\n" if head =~ /^@@/
-    head
   end
 
   def file_extension(file_name)

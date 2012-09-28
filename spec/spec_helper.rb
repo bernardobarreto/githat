@@ -9,7 +9,7 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 module Diff
   def files_names
-    ['bar.rb', 'foo.rb']
+    ['githat_spec.rb']
   end
 end
 

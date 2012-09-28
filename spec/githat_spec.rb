@@ -13,7 +13,7 @@ describe "Githat" do
     end
 
     it "files_names" do
-      files_names.should == ['bar.rb', 'foo.rb'] # mocked
+      files_names.should == ['githat_spec.rb']
     end
 
     it "prepare_head_for_output" do
