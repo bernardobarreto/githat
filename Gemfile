@@ -3,5 +3,5 @@ group :development do
   gem "rspec"
   gem "bundler"
   gem "jeweler", "~> 1.8.3"
-  gem "pygmentize"
+  gem "pygments.rb"
 end

@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/parser'
+require 'pygments.rb'
 
 module Diff
   def main
@@ -24,7 +24,9 @@ module Diff
     complete_file_diff = ''
 
     (0...heads.size).each do |i|
-      parsed_head = parse_with_diff(heads[i])
+      head = heads[i]
+      parsed_head = parse_with_diff(head)
+      parsed_head.insert 0, "\n" if head =~ /^@@/
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
       complete_file_diff << (parsed_head + parsed_code)
@@ -34,9 +36,9 @@ module Diff
   end
 
   def file_extension(file_name)
-    extension = file_name.gsub /(.+\.)/, ''
+    extension = files_with_no_extension[file_name]
+    extension ||= file_name.gsub /(.+\.)/, ''
     if extension.empty? || file_name == extension
-      extension = files_with_no_extension[file_name]
       extension ||= 'text'
     end
     extension.to_sym
@@ -85,7 +87,7 @@ module Diff
   end
 
   def process(code, lexer)
-    Pygmentize.process(code, lexer)
+    Pygments.highlight code, formatter: 'terminal', lexer: lexer
   end
 end
 
