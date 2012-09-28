@@ -24,7 +24,7 @@ module Diff
     complete_file_diff = ''
 
     (0...heads.size).each do |i|
-      parsed_head = parse_with_diff(prepare_head(head[i]))
+      parsed_head = parse_with_diff(prepare_head_for_output(heads[i]))
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
       complete_file_diff << (parsed_head + parsed_code)
@@ -33,7 +33,7 @@ module Diff
     complete_file_diff
   end
 
-  def prepare_head_for_parse(head)
+  def prepare_head_for_output(head)
     head.insert 0, "\n" if head =~ /^@@/
     head
   end

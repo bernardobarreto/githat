@@ -16,6 +16,10 @@ describe "Githat" do
       files_names.should == ['bar.rb', 'foo.rb'] # mocked
     end
 
+    it "prepare_head_for_output" do
+      prepare_head_for_output(_2_heads_file[1]).should == "\n@@ -19,12 +13,12 @@"
+    end
+
     it "split_heads" do
       split_heads(_1_file_2_heads).should ==
        ["diff --git a/spec/githat_spec.rb b/spec/githat_spec.rb\n" +

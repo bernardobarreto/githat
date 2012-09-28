@@ -13,6 +13,15 @@ module Diff
   end
 end
 
+def _2_heads_file
+  ["diff --git a/spec/githat_spec.rb b/spec/githat_spec.rb" +
+  "index 0c55061..217f540 100644" +
+  "--- a/spec/githat_spec.rb" +
+  "+++ b/spec/githat_spec.rb" +
+  "@@ -1,11 +1,5 @@",
+  "@@ -19,12 +13,12 @@"]
+end
+
 def _1_file_2_heads
   %{diff --git a/spec/githat_spec.rb b/spec/githat_spec.rb
 index 0c55061..217f540 100644
