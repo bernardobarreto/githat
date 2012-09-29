@@ -25,7 +25,7 @@ module Diff
 
     (0...heads.size).each do |i|
       head = heads[i]
-      head = prepare_head_for_output(head) if i > 0
+      head = prepare_head_for_output(head) if i > 0 #TODO: wrong!
       parsed_head = parse_with_diff(prepare_head_for_output(head))
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
@@ -69,7 +69,11 @@ module Diff
   end
 
   def files_names
-    `git diff --name-only`.split(/\n/)
+    git_status.scan(/modified: .*/).map { |n| n.gsub(/modified: */, '') }
+  end
+
+  def git_status
+    `git status`
   end
 
   def parse_with_lang(code, lang)

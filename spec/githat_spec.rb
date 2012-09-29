@@ -6,7 +6,7 @@ describe "Githat" do
   describe Diff do
     describe "ensure some methods are mocked" do
       it "files_names" do
-        files_names.should == ['githat_spec.rb']
+        files_names.should == ['.gitignore', 'lib/githat.rb']
       end
 
       it "file_diff" do
@@ -24,6 +24,10 @@ describe "Githat" do
       file_extension('foo.rb').should == :rb
       file_extension('bar.js').should == :js
       file_extension('foobar').should == :text
+    end
+
+    it "files_names" do
+      files_names.should == ['.gitignore', 'lib/githat.rb']
     end
 
     it "prepare_head_for_output" do

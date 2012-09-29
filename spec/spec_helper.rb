@@ -8,13 +8,19 @@ require 'githat'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 module Diff
-  def files_names
-    ['githat_spec.rb']
-  end
-
   def file_diff(name)
     _1_file_2_heads
   end
+
+  def git_status
+    git_status_modified_files
+  end
+end
+
+def git_status_modified_files
+  "# modified:   .gitignore\n" +
+  "# deleted:    foo\n" +
+  "# modified:   lib/githat.rb"
 end
 
 def _1_file_2_heads_splited
