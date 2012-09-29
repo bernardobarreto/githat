@@ -33,6 +33,32 @@ def _1_file_2_heads_splited
     "@@ -19,12 +13,12 @@"] }
 end
 
+def _2_files
+  %{diff --git a/lib/githat.rb b/lib/githat.rb
+index fdc7d30..c912bca 100644
+--- a/lib/githat.rb
++++ b/lib/githat.rb
+@@ -26,7 +26,7 @@ module Diff
+     (0...heads.size).each do |i|
+       parsed_head = parse_with_diff(prepare_head_for_output(heads[i]))
+       parsed_code = parse_with_lang(codes[i], extension)
+-      parsed_code = parse_with_diff(parsed_code)
++      foo
+       complete_file_diff << (parsed_head + parsed_code)
+     end
+
+diff --git a/spec/githat_spec.rb b/spec/githat_spec.rb
+index 13edd0f..2c6b9d1 100644
+--- a/spec/githat_spec.rb
++++ b/spec/githat_spec.rb
+@@ -1,5 +1,5 @@
+ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+-
++foo
+ describe "Githat" do
+   before(:each) { extend Diff }}
+end
+
 def _2_heads_file
   ["diff --git a/spec/githat_spec.rb b/spec/githat_spec.rb" +
   "index 0c55061..217f540 100644" +

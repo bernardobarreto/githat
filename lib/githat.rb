@@ -24,7 +24,9 @@ module Diff
     complete_file_diff = ''
 
     (0...heads.size).each do |i|
-      parsed_head = parse_with_diff(prepare_head_for_output(heads[i]))
+      head = heads[i]
+      head = prepare_head_for_output(head) if i > 0
+      parsed_head = parse_with_diff(prepare_head_for_output(head))
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
       complete_file_diff << (parsed_head + parsed_code)
@@ -34,13 +36,13 @@ module Diff
   end
 
   def prepare_head_for_output(head)
-    head.insert 0, "\n" if head =~ /^@@/
+    head.insert 0, "\n"
   end
 
   def file_extension(file_name)
-    extension = files_with_no_extension[file_name]
-    extension ||= file_name.gsub /(.+\.)/, ''
+    extension = file_name.gsub /(.+\.)/, ''
     if extension.empty? || file_name == extension
+      extension = files_with_no_extension[file_name]
       extension ||= 'text'
     end
     extension.to_sym
