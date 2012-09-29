@@ -39,6 +39,7 @@ describe "Githat" do
     end
 
     it "split_diff" do
+      split_diff(_1_file_2_heads).should == _1_file_2_heads_splited
     end
   end
 end
