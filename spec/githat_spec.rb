@@ -26,6 +26,10 @@ describe "Githat" do
       file_extension('foobar').should == :text
     end
 
+    it "files_infos (with argv)" do
+      gh_spec = files_infos(['spec/githat_spec.rb']).should == _1_file_2_heads_diff
+    end
+
     it "files_names" do
       files_names.should == ['.gitignore', 'lib/githat.rb']
     end

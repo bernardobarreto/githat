@@ -1,17 +1,19 @@
 require 'pygments.rb'
 
 module Diff
-  def main
+  def main(argv=nil)
     output = ''
-    files_infos.each do |file|
+    infos = files_infos(argv)
+    infos.each do |file|
       output << parse_diff(file)
     end
     output
   end
 
-  def files_infos
+  def files_infos(argv)
     files = []
-    files_names.map do |name|
+    names = argv == [] ? files_names : argv
+    names.map do |name|
       files << { name: name, diff: file_diff(name) }
     end
     files

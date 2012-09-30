@@ -5,4 +5,4 @@ require "githat"
 
 include Diff
 
-puts main
+puts main(ARGV)
