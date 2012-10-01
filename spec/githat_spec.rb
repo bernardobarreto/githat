@@ -14,10 +14,6 @@ describe "Githat" do
       end
     end
 
-    it "prepare_head_for_output" do
-      prepare_head_for_output(_2_heads_file[1]).should == "\n@@ -19,12 +13,12 @@"
-    end
-
     it "file_extension" do
       file_extension('Makefile').should == :makefile
       file_extension('.gitignore').should == :text
@@ -32,10 +28,6 @@ describe "Githat" do
 
     it "files_names" do
       files_names.should == ['.gitignore', 'lib/githat.rb']
-    end
-
-    it "prepare_head_for_output" do
-      prepare_head_for_output(_2_heads_file[1]).should == "\n@@ -19,12 +13,12 @@"
     end
 
     it "split_heads" do
