@@ -26,19 +26,13 @@ module Diff
     complete_file_diff = ''
 
     (0...heads.size).each do |i|
-      head = heads[i]
-      head = prepare_head_for_output(head) if i > 0 #TODO: wrong!
-      parsed_head = parse_with_diff(prepare_head_for_output(head))
+      parsed_head = parse_with_diff(heads[i])
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
-      complete_file_diff << (parsed_head + parsed_code)
+      complete_file_diff << (parsed_head + parsed_code + "\n")
     end
 
     complete_file_diff
-  end
-
-  def prepare_head_for_output(head)
-    head.insert 0, "\n"
   end
 
   def file_extension(file_name)
@@ -61,7 +55,7 @@ module Diff
   end
 
   def split_heads(diff)
-    heads = diff.scan(/diff(?:.*\n){4}@@ .* @@/)
+    heads = diff.scan(/^diff --git(?:.*\n){4}@@ .* @@/)
     heads << diff.scan(/^@@ .* @@/).tap(&:shift)
     heads.flatten
   end
