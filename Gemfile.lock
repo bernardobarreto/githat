@@ -30,7 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
+  bundler (~> 1.0)
   jeweler (~> 1.8.3)
-  pygments.rb
-  rspec
+  pygments.rb (~> 0.3.1)
+  rspec (~> 2.11.0)
