@@ -10,7 +10,7 @@ GEM
       rdoc
     json (1.7.5)
     posix-spawn (0.3.6)
-    pygments.rb (0.3.1)
+    pygments.rb (0.3.2)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
     rake (0.9.2.2)
@@ -32,5 +32,5 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0)
   jeweler (~> 1.8.3)
-  pygments.rb (~> 0.3.1)
+  pygments.rb (~> 0.3.2)
   rspec (~> 2.11.0)
