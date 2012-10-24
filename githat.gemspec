@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "githat"
-  s.version = ""
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bernardo B. Marques"]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.mkd",
     "Rakefile",
+    "VERSION",
     "bin/git-hat",
     "githat.gemspec",
     "githat.png",
