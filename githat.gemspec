@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "README.mkd",
     "Rakefile",
     "bin/git-hat",
+    "githat.gemspec",
     "githat.png",
     "lib/githat.rb",
     "spec/githat_spec.rb",
