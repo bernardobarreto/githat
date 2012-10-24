@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "githat"
   gem.homepage = "http://github.com/bernardofire/githat"
   gem.license = "MIT"
-  gem.description = %Q{highlight at git}
+  gem.description = %Q{git diff with code syntax highlight}
   gem.email = "bernardo.fire@gmail.com"
   gem.authors = ["Bernardo B. Marques"]
   gem.executables = ["git-hat"]
@@ -29,11 +29,6 @@ require 'rspec/core'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.pattern = FileList['spec/**/*_spec.rb']
-end
-
-RSpec::Core::RakeTask.new(:rcov) do |spec|
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
 end
 
 task :default => :spec
