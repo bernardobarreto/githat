@@ -1,8 +1,15 @@
 #!/usr/bin/env ruby
-
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
 require "githat"
-
 include Diff
 
-puts main(ARGV)
+output = main(ARGV)
+
+is_less_avaiable = !(`which less`).empty?
+
+if !output.empty? && is_less_avaiable
+  puts exec("echo '#{output}' | less -R")
+else
+  puts output
+end
+
