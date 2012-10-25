@@ -14,7 +14,9 @@ Install
 Use
 ---
 `$ git hat`
+
 you choose the files:
+
 `$ git hat foo.rb bar.py`
 
 Contributing to githat
