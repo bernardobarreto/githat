@@ -7,6 +7,15 @@ Example with ruby code:
 
 ![githat](https://raw.github.com/bernardofire/githat/master/githat.png)
 
+Install
+-------
+`$ [sudo] gem install githat`
+
+Use
+---
+`$ git hat`
+you choose the files:
+`$ git hat foo.rb bar.py`
 
 Contributing to githat
 ----------------------
