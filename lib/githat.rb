@@ -4,7 +4,7 @@ module Diff
   def main(argv=nil)
     output = ''
     infos = files_infos(argv)
-    infos.each do |file|
+    infos.map do |file|
       output << parse_diff(file)
     end
     output
