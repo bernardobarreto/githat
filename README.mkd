@@ -15,7 +15,7 @@ Use
 ---
 `$ git hat`
 
-you choose the files:
+you can choose the files:
 
 `$ git hat foo.rb bar.py`
 
