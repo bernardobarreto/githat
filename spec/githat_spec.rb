@@ -20,6 +20,8 @@ describe "Githat" do
       file_extension('foo.rb').should == :rb
       file_extension('bar.js').should == :js
       file_extension('foobar').should == :text
+      file_extension('Gemfile').should == :rb
+      file_extension('Rakefile').should == :rb
     end
 
     it "files_infos (with argv)" do
