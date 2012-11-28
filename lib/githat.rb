@@ -29,7 +29,7 @@ module Diff
       parsed_head = parse_with_diff(heads[i])
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
-      complete_file_diff << (parsed_head + parsed_code + "\n")
+      complete_file_diff << (parsed_head << parsed_code << "\n")
     end
 
     complete_file_diff
