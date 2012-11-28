@@ -25,7 +25,7 @@ module Diff
     heads, codes = splited[:heads], splited[:codes]
     complete_file_diff = ''
 
-    (0...heads.size).each do |i|
+    (0...heads.size).map do |i|
       parsed_head = parse_with_diff(heads[i])
       parsed_code = parse_with_lang(codes[i], extension)
       parsed_code = parse_with_diff(parsed_code)
