@@ -1,4 +1,5 @@
 require 'pygments.rb'
+require 'pagination'
 
 module Diff
   def main(argv=nil)
