@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "githat.gemspec",
     "githat.png",
     "lib/githat.rb",
+    "lib/pagination.rb",
     "spec/githat_spec.rb",
     "spec/spec_helper.rb"
   ]
