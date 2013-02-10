@@ -1,4 +1,7 @@
 githat
+# githat [![Build Status](https://secure.travis-ci.org/bernardofire/githat.png?branch=master)][travis]
+
+[travis]: http://travis-ci.org/bernardofire/githat
 ======
 
 Git diff with code syntax highlight
