@@ -38,3 +38,7 @@ Copyright
 Copyright (c) 2012 Bernardo B. Marques. See LICENSE.txt for
 further details.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/bernardofire/githat/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
