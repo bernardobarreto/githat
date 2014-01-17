@@ -63,9 +63,9 @@ index fdc7d30..c912bca 100644
 +++ b/lib/githat.rb
 @@ -26,7 +26,7 @@ module Diff
      (0...heads.size).each do |i|
-       parsed_head = parse_with_diff(prepare_head_for_output(heads[i]))
-       parsed_code = parse_with_lang(codes[i], extension)
--      parsed_code = parse_with_diff(parsed_code)
+       parsed_head = parse_diff(prepare_head_for_output(heads[i]))
+       parsed_code = parse_lang(codes[i], extension)
+-      parsed_code = parse_diff(parsed_code)
 +      foo
        complete_file_diff << (parsed_head + parsed_code)
      end

@@ -27,9 +27,9 @@ module Diff
     complete_file_diff = ''
 
     (0...heads.size).map do |i|
-      parsed_head = parse_with_diff(heads[i])
-      parsed_code = parse_with_lang(codes[i], extension)
-      parsed_code = parse_with_diff(parsed_code)
+      parsed_head = parse_diff(heads[i])
+      parsed_code = parse_lang(codes[i], extension)
+      parsed_code = parse_diff(parsed_code)
       complete_file_diff << (parsed_head << parsed_code << "\n")
     end
 
@@ -73,11 +73,11 @@ module Diff
     `git status`
   end
 
-  def parse_with_lang(code, lang)
+  def parse_lang(code, lang)
     process(code, lang)
   end
 
-  def parse_with_diff(code)
+  def parse_diff(code)
     process(code, :diff)
   end
 
