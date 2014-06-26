@@ -9,3 +9,4 @@ pkg
 *.swo
 .rvmrc
 *.gem
+.ruby-version
